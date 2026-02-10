@@ -26,4 +26,4 @@ O site foi desenvolvido com foco em **mobile first**, utilizando media queries p
 ## 🚀 Como executar o projeto
 ```bash
 python app.py
-![Preview](assets/preview.png)
+
