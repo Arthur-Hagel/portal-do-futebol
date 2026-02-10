@@ -1,0 +1,260 @@
+/* =========================
+   ESTILO GERAL DO SITE
+   ========================= */
+
+/* Estilo aplicado ao corpo inteiro da página */
+body {
+    background-color: #0b6623;   /* Cor de fundo (verde campo de futebol) */
+    color: white;                /* Cor padrão de todo o texto */
+    font-family: Arial, sans-serif; /* Fonte usada no site */
+    text-align: center;          /* Centraliza textos e elementos inline */
+    margin: 0;                   /* Remove margens padrão do navegador */
+}
+
+/* =========================
+   MENU DE NAVEGAÇÃO
+   ========================= */
+
+/* Barra principal do menu no topo */
+.menu {
+    background-color: #064420;   /* Verde mais escuro para destacar o menu */
+    padding: 15px 0;             /* Espaço interno em cima e embaixo */
+}
+
+/* Lista do menu */
+.menu ul {
+    list-style: none;            /* Remove bolinhas da lista */
+    margin: 0;                   /* Remove margens padrão */
+    padding: 0;                  /* Remove espaçamento interno */
+    text-align: center;          /* Centraliza os itens do menu */
+}
+
+/* Cada item da lista do menu */
+.menu li {
+    display: inline;             /* Deixa os itens lado a lado */
+    margin: 0 15px;              /* Espaçamento entre os links */
+}
+
+/* Links do menu */
+.menu a {
+    color: white;                /* Cor do texto dos links */
+    text-decoration: none;       /* Remove sublinhado */
+    font-weight: bold;           /* Deixa o texto mais forte */
+}
+
+/* Efeito quando passa o mouse sobre o link */
+.menu a:hover {
+    text-decoration: underline;  /* Sublinha o link */
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+   ========================= */
+
+/* Caixa central que envolve todo o conteúdo */
+.container {
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro com transparência */
+    width: 90%;               /* Largura em relação à tela */
+    margin: 50px auto;        /* Centraliza horizontalmente */
+    padding: 30px;            /* Espaço interno */
+    border-radius: 10px;      /* Bordas arredondadas */
+}
+
+/* =========================
+   TEXTO E TÍTULOS
+   ========================= */
+
+/* Título principal do site */
+h1 {
+    font-size: 42px;          /* Tamanho grande para destaque */
+    margin-bottom: 10px;      /* Espaço abaixo do título */
+}
+
+/* Subtítulos das seções */
+h2 {
+    font-size: 26px;          /* Menor que o h1 */
+    margin-bottom: 8px;       /* Espaço abaixo */
+}
+
+/* Parágrafos */
+p {
+    font-size: 18px;          /* Tamanho confortável para leitura */
+    line-height: 1.6;         /* Espaçamento entre linhas */
+}
+
+/* =========================
+   SEÇÕES DE CONTEÚDO
+   ========================= */
+
+/* Blocos individuais das seções */
+.secao {
+    background-color: rgba(255, 255, 255, 0.12); /* Fundo claro transparente */
+    margin-top: 40px;        /* Espaço entre uma seção e outra */
+    padding: 25px;           /* Espaço interno */
+    border-radius: 8px;      /* Bordas arredondadas */
+}
+/* =========================
+   BANNER
+   ========================= */
+
+/* Container do banner */
+.banner {
+    position: relative;   /* Referência para overlay e texto */
+    width: 100%;          /* Ocupa toda a largura */
+    height: 80vh;         /* 45% da altura da tela (responsivo) */
+    min-height: 250px;    /* Altura mínima para telas pequenas */
+    overflow: hidden;     /* Esconde excesso da imagem */
+}
+
+
+/* Imagem do banner */
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* Corta a imagem sem distorcer */
+    display: block;
+}
+/* =========================
+   TEXTO SOBRE O BANNER
+   ========================= */
+
+/* Container do banner (posição relativa) */
+.banner {
+    position: relative; /* Permite posicionar o texto por cima */
+}
+
+/* Texto sobre a imagem */
+.banner-texto {
+    position: absolute;       /* Fica por cima da imagem */
+    top: 50%;                 /* Centraliza verticalmente */
+    left: 50%;                /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste fino de centralização */
+    color: white;             /* Cor do texto */
+    text-align: center;       /* Centraliza o texto */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro transparente */
+    padding: 20px 30px;       /* Espaço interno */
+    border-radius: 8px;       /* Bordas arredondadas */
+}
+/* Camada escura sobre a imagem */
+.banner::before {
+    content: "";                 /* Obrigatório para pseudo-elemento */
+    position: absolute;          /* Fica por cima da imagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45); /* Escurece a imagem */
+    z-index: 1;                  /* Camada intermediária */
+}
+.banner-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;                  /* Texto acima do overlay */
+}
+/* =========================
+   ANIMAÇÃO DO TEXTO DO BANNER
+   ========================= */
+
+/* Estado inicial do texto */
+.banner-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%); /* Começa um pouco mais baixo */
+    color: white;
+    text-align: center;
+    z-index: 2;
+    opacity: 0;                       /* Começa invisível */
+    animation: aparecer 1.2s ease-out forwards;
+}
+
+/* Definição da animação */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30%);
+}
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+}
+}
+/* =========================
+   RESPONSIVO - CELULAR
+   ========================= */
+
+/* Regras aplicadas quando a tela tiver até 768px */
+@media (max-width: 768px) {
+
+    /* MENU NO CELULAR */
+
+    .menu ul {
+        display: flex;              /* Ativa flexbox */
+        flex-direction: column;     /* Coloca itens em coluna */
+        align-items: center;        /* Centraliza horizontalmente */
+    }
+
+    .menu li {
+        display: block;             /* Um item por linha */
+        margin: 12px 0;             /* Espaço entre os links */
+    }
+
+    .menu a {
+        font-size: 18px;            /* Texto maior (toque fácil) */
+    }
+    /* MAIS ESPAÇO ENTRE AS SEÇÕES NO CELULAR */
+   /* Ajusta o bloco da seção no celular */
+    .secao {
+        width: 95%;          /* ocupa quase toda a tela */
+        padding: 30px 15px;  /* menos espaço lateral */
+        margin: 20px auto;   /* centraliza e dá respiro vertical */
+    }
+    /* ALTURA DO BANNER NO CELULAR */
+    
+        
+    .banner {
+        height: 45vh; /* menor no celular */
+    }
+
+    
+    /* Título principal */
+    h1 {
+        font-size: 1.6rem;   /* diminui para caber no celular */
+        text-align: center; /* centraliza para melhor leitura */
+    }
+
+    /* Subtítulos */
+    h2 {
+        font-size: 1.3rem;   /* diminui o tamanho do título */
+        margin-bottom: 12px; /* espaço abaixo do título */
+        text-align: center;  /* melhora a leitura no mobile */
+    }
+
+
+    /* Texto das seções */
+    p {
+        font-size: 0.95rem;   /* texto um pouco menor no mobile */
+        line-height: 1.6;     /* mais espaço entre as linhas */
+        text-align: justify; /* leitura mais confortável */
+    }
+    .container {
+        width: 95%;        /* ocupa melhor a tela */
+        margin: 0 auto;    /* centraliza */
+    }
+    .banner-texto {
+        padding: 0 15px;      /* evita colar nas laterais */
+        text-align: center;   /* leitura melhor */
+    }
+
+    .banner-texto h1 {
+        font-size: 1.6rem;    /* título principal menor */
+    }
+    nav a {
+        display: block;        /* um link por linha */
+        margin: 10px 0;        /* espaço para o dedo */
+    }
+}

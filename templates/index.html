@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Define que este documento é HTML5 -->
+<html lang="pt-br">
+<!-- Define o idioma da página como português do Brasil -->
+<head>
+     <!-- Configurações da página (não aparece no site) -->
+    <meta charset="UTF-8">
+    <!-- Permite usar acentos e caracteres especiais -->
+    <title>Portal do Futebol</title>
+    <!-- Título que aparece na aba do navegador -->
+
+    <!-- Conecta o CSS ao Flask -->
+    <!-- url_for indica ao Flask onde está o arquivo estático -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Menu de navegação -->
+    <!-- nav indica que este bloco é um menu -->
+<nav class="menu">
+    <!-- Lista não ordenada para os links -->
+    <ul>
+        <!-- Cada li é um item do menu -->
+        <!-- href="#geral" aponta para o id="geral" -->
+        <li><a href="#geral">Futebol</a></li>
+        <!-- Link que leva para a seção do time -->
+        <li><a href="#time">Time</a></li>
+        <!-- Link que leva para a seção de campeonatos -->
+        <li><a href="#campeonato">Campeonatos</a></li>
+    </ul>
+</nav>
+<!-- =========================
+     BANNER DO SITE
+     ========================= -->
+<div class="banner">
+    <!-- Imagem do banner -->
+    <img src="{{ url_for('static', filename='imagens/banner.jpg') }}" alt="Banner de futebol">
+
+    <!-- Texto sobre a imagem -->
+        <div class="banner-texto">
+        <h1>Portal do Futebol</h1>
+        <p>Notícias, times e campeonatos em um só lugar</p>
+        </div>
+</div>
+
+    <!--Tudo que estiver dentro do body aparece no site -->
+
+    <!-- Container principal do site que é centralizado -->
+    <div class="container">
+
+        <h1>⚽ Portal do Futebol</h1> <!--Titulo principal do site-->
+        <!--Texto de introdução-->
+        <p>Tudo sobre futebol, times e campeonatos.</p>
+        
+        <!-- Seção: Futebol em geral -->
+        <section class="secao" id = "geral">
+            <h2>⚽ Futebol em geral</h2>
+            <p>Notícias, curiosidades e história do futebol mundial.<p>
+        </section>
+        <!-- Seção: Time específico -->
+        <section class = "secao" id = "time">
+            <h2>🏟️ Time em destaque</h2>
+            <p>Informações, elenco e resultados do seu time favorito.</p>
+        </section>
+        <!-- Seção: Campeonato -->
+        <section class = "secao" id = "campeonato">
+            <h2>🏆 Campeonatos</h2>
+            <p>Brasileirão, Copa do Brasil, Libertadores e muito mais.</p>
+        </section>
+    </div>
+
+</body>
+</html>
